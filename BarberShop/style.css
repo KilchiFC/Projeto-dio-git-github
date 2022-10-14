@@ -1,0 +1,483 @@
+:root {
+    --color-primary: #917758;
+    --color-secondary: #3c2915;
+    --color-primary-light:#f5eee6;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    
+    width: 1170px;
+    margin: 0 auto;/*centralizar a div com 0 de top e bottom e auto para os lados*/
+}
+
+/***********************************
+*****HOME
+************************************/
+
+.home {
+    position: relative;/*esse position é necessário para centralizar todo conteúdo do banner(para se transformar em tag pai para poder mudar o banner para position absolute*/
+    background-size: cover;/*cobertura de toda a área*/
+    background-image: url(images/images/bg-home.jpg);
+    height: 100vh;/* view port height*/
+    background-attachment: fixed;/*Paralax*/
+}
+
+.home .header {
+    padding: 30px 0;
+}
+
+.home .header .nav {
+    display: flex;
+    justify-content: center;
+}
+
+.home .header .nav ul {
+    display: flex;/*lista em linha(lado a lado)*/
+    list-style: none;/*retirar as bolinhas*/
+}
+
+.home .header .nav ul li {/*para alinhar todos os iten de links ao lado do logo(verificar a altura que a li tem)*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.home .header .nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 20px;
+
+}
+.home .header .nav ul li a:hover {
+
+    border-bottom: 1px solid var(--color-primary);/* cor do traço abaixo do link*/
+    color: var(--color-primary);/*cor do texto do link*/
+
+}
+
+.home .header .nav ul li .logo {
+    margin:0 30px;
+}
+
+/*************************************
+ ****HOME- BUNNER
+ ************************************/
+
+ .home .banner {/*CENTRALIZAR*/
+     position: absolute;/*NECESSÁRIO DECLARAR POSITION RELATIVE NO .HOME PRIMEIRO*/
+     top: 50%;
+     left: 50%;
+     height: 270px;/*alinhar o tamanho (height e width)no dev tools para retirar os valores negativos para centralizar todo conteúdo*/
+     width: 770px;
+     margin-left: -385px;/*metade de 770px que é a largura */
+     margin-top: -75px;/*metade de 270px que é a altura*/
+     color: white;
+     text-align: center;
+ }
+
+ .home .banner span {/*o span e inline*/
+     display: block;
+ }
+
+ .home .banner .slogan1 {
+     color: var(--color-primary);
+     text-transform: uppercase;
+     letter-spacing: 4px;
+     font-size: 14px;
+ }
+
+ .home .banner h1 {
+     font-size: 120px;
+
+ }
+
+ .home .banner .slogan2 {
+     margin-bottom: 15px;
+
+ }
+
+ /*************************************
+   ABOUT
+ ************************************/
+ .about {/*background do 52 anos (sobre)*/
+     
+     background-color: var(--color-primary);
+ }
+
+ .about .container {/*para acessar apenas o container dentro do about*/
+    display: flex;/*elementos lado a lado*/
+ }
+
+ .about .timing {
+     position: relative;
+     top: -50px;
+     width: 33%;
+     padding: 20px;/*para centralizar a div com transparência*/
+     background-image: url(images/images/brush-big.jpg);
+ }
+
+ .about .timing .overlay {
+     background: rgba(0, 0, 0, 0.8);
+     text-align: center;
+     padding: 40px 20px;
+ }
+ .about .timing.icon-cut {
+     width: 50px;
+ }
+ .about .timing h3 {
+     color: var(--color-primary);
+     text-transform: uppercase;
+     border-bottom: 1px solid  var(--color-primary);
+     width: fit-content;/*h3 do tamanho do conteúdo*/
+     margin: 0 auto 30px auto;/*centralizar*/
+    font-size: 30px;  
+ }
+ .about .timing .text {
+     margin: 10px 0;/*10px para cima e para baixo e 0 para os lados*/
+ }
+ .about .timing .text:after {
+     content: "•";
+     display: block;
+     font-size: 10px;
+     color: white;
+     margin-top: 10px;
+ }
+ .about .timing .text:last-of-type:after {
+     content:'|'
+ }/*text:last-of-type para inserir algo no último item de um texto . Sobreescrever a regra do after*/
+
+
+ .about .timing .text h4 {
+     color: grey;
+     font-weight: 400;
+     font-size: 15px;
+ }
+
+ .about .timing  span {
+     color: white;
+     font-size: 15px;
+     display: block;/*deixar o ícone em cima do endereço*/
+ }
+
+ .about .experience  {
+     width: 66%;
+     color: white;
+     margin: 7%;
+     margin-top: 100px;
+    
+ }
+ .about .experience h2 {
+    font-weight: 400;
+    font-size: 40px;
+
+ }
+
+ .about .experience h2:after {/*traço abaixo do h2*/
+     display: block;
+     content: '';/*display e content OBRIGATÓRIOS*/
+     width: 100px;
+     height: 3px;
+     background-color: #a38f78 ;
+     margin: 20px 0;/*20px para cima e para baixo e zero para os lados*/
+ }
+
+ .about .experience .text {
+     display: flex;
+     justify-content: space-between;    
+
+ }
+
+ .about .experience .text p {
+     margin-bottom: 20px;
+     font-weight: 100;
+     font-size: 17px;
+ }
+
+ /*****************
+ ****SERVICES
+ ******************/
+
+ .services {
+     padding: 100px 0;
+     text-align: center;
+     background-color: var(--color-primary-light);
+ }
+
+ .services h2 {
+     color: var(--color-secondary);
+     font-weight: 400;
+     font-size: 50px;
+     margin-bottom: 10px;
+ }
+ .services .boxes {/*caixas lado a lado*/
+     display: flex;
+     justify-content: space-between;
+     margin-top: 50px;/*pode ser usado para ajustar a distância entre o box e a imagem*/
+ }
+ .services .box {
+     border: 3px solid var(--color-primary);
+     padding: 50px 30px;/*tamanho dos boxes, 50der altura e 30px para os lados*/
+     margin: 30px;
+ }
+
+ .services .box h4 {
+     color: var(--color-secondary);
+     margin-top: 30px;
+ }
+
+ .services .box p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 25px;
+}
+ /*****************
+ ****APPOINTMENT
+ ******************/
+
+ .appoitment {
+     padding: 100px 0;
+     
+     background-color: var(--color-primary);
+     height: 100vh;
+     background-image: url(images/images/chair-ic.png);
+     background-repeat: no-repeat;/*NÃO REPETIR A IMAGEM*/
+     background-position: right bottom;/*posicionar a imagem á direita e embaixo*/
+     background-size: 300px;
+}
+
+ .appoitment h2 {
+    color: var(--color-primary-light);
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.appoitment img {
+    margin: 0 auto;
+    display: block;/*ALINHAR A IMAGEM NO MEIO...display block pq a imagem é inline*/
+}
+
+.appoitment form {
+    margin-top: 80px;
+}
+
+.appoitment .personal-data {
+    display: flex;
+    justify-content: space-between;/*separar*/
+    margin-bottom: 20px;
+}
+
+.appoitment  .input-wrapper {
+    width: 100%;
+    margin-right: 50px;/*para deixar os inputs separados*/
+}
+.appoitment  .input-wrapper:last-of-type {
+    margin-right: 0;
+}
+
+.appoitment  label {
+    display: block;/*para empurrar o input para baixo*/
+    font-size:14px;
+    margin-bottom: 2px;
+    color: var(--color-primary-light);
+}
+
+.appoitment .personal-data input,
+.appoitment .personal-data select,
+.appoitment textarea {
+    padding: 5px 10px;
+    outline: none;/*bordas*/
+    border: none;
+    width: 100%;/*100% do tamanho do wrapper*/
+    border-radius: 3px;
+}
+
+.appoitment textarea {
+    height: 100px;
+}
+
+.appoitment button {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+ /*****************
+ ****GALLERY
+ ******************/
+
+ .gallery {
+    padding: 100px 0;
+    background-color: var(--color-primary-light);
+     
+}
+
+.gallery h2 {
+   color: var(--color-secondary);
+   font-weight: 400;
+   font-size: 50px;
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.gallery img {
+   margin: 0 auto;
+   display: block;/*ALINHAR A IMAGEM NO MEIO...display block pq a imagem é inline*/
+}
+.gallery .gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 100vh;
+    margin: 50px auto;  
+}/*ALINHAR AS FOTOS********
+  *container pai e vários elementos filhos
+  *cada elemento filho tem que ter uma altura diferente(img/div)
+  *coloca o  display flex no pai
+  *colunas com flex-direction
+  *limita o height do container
+  *limita o width
+  *os elementos filhos estouram para fora
+  *alicar o wrap para todos se encaixarem
+
+*/
+
+.gallery .gallery-wrapper div {/*separação e posicionamento das imagens*/
+    border: 10px solid var(--color-primary);
+    margin: 6px;
+    width: 33%;
+}
+
+.gallery .gallery-wrapper div img {
+    width: 100%;/*Para ajustar o tamanho da imagem dentro da div, a div ocupa 33%(sendo uma coluna) são 3 colunas, a img para se encaixar tem que ter 100% da div, a altura se ajusta sozinha*/
+}
+
+ /*****************
+ ****LOCATIONS
+ ******************/
+
+ .location {
+     padding: 100px 0;
+     background: url(images/images/bg-location.jpg);
+     background-size: cover;/*ocupação de todo o background*/
+ }
+
+.location .head {
+    display: flex;
+    justify-content: space-between;
+    background-color: #191919;
+    padding: 40px;
+    width: 100%;
+} 
+.location .head .info {
+    align-items: center;
+    display: flex;
+}
+.location .head .info .icon {
+    display: flex;
+    align-items: center;/*centralizar o ícone dentro do border*/
+    justify-content: center;/*alinhar na horizontal*/
+    border: 1px solid var(--color-primary);
+    border-radius: 100%;
+    padding: 10px;
+    width: 50px;/*tem que declarar um tamanho fixo para ficar redondo em todos os ícones*/
+    height: 50px;
+    margin-right: 15px;
+}
+.location .head .info  .text span {/*para quebrar o texto do span*/
+    display: block;
+    font-size: 13px;
+
+}
+.location .head .info  .text span:first-child {
+    color: silver;
+}
+.location .head .info  .text span:last-child {
+    color: white;
+}
+.location .map {
+    width: 100%;
+}
+.location .map iframe {
+    width: 100%;
+}
+
+/*****************
+ ****FOOTER
+ ******************/
+ .footer {
+     background-color: #191919;
+     color: white;
+     padding: 40px;
+     text-align: center;
+     font-size: 12px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
